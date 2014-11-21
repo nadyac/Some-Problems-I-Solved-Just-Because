@@ -5,7 +5,7 @@ import java.math.*;
 import java.util.regex.*;
 
 public class solution {
-   static String result = "-1";
+    static String result = "-1";
 	static int numberOf3s = 0;
 	static int numberOf5s = 0;
 	static String concatenated = "";
@@ -63,15 +63,17 @@ public class solution {
 				}
 			}
 			
+			StringBuilder sb = new StringBuilder();
+			
 			//generate the decent number
 			for (int i = 0; i < numberOf5s; i++){
-				concatenated = concatenated + 5;
+				sb.append("5");
 			}
 			
 			for (int i = 0; i < numberOf3s; i++){
-				concatenated = concatenated + 3;
+				sb.append("3");
 			}
 			
-			return concatenated;
+			return sb.toString();
 		}
 }
