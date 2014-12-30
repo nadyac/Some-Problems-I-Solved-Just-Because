@@ -8,9 +8,8 @@ public class solution {
     static String result = "-1";
 	static int numberOf3s = 0;
 	static int numberOf5s = 0;
-	static String concatenated = "";
 	
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int tests = input.nextInt();
 		
@@ -21,7 +20,6 @@ public class solution {
 			result = "-1";
 			numberOf3s = 0;
 			numberOf5s = 0;
-			concatenated="";
 			
 			if (N < 3){
 				result = "-1";
@@ -69,7 +67,6 @@ public class solution {
 			for (int i = 0; i < numberOf5s; i++){
 				sb.append("5");
 			}
-			
 			for (int i = 0; i < numberOf3s; i++){
 				sb.append("3");
 			}
