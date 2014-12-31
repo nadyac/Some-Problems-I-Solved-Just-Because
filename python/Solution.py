@@ -32,13 +32,8 @@ def isValidDay(month, n):
         if n <= 12:
             return False
 
-<<<<<<< HEAD
-		#check if n is a valid day for the given month
+        #check if n is a valid day for the given month
         if month == 2 and n > 28:
-=======
-	#check if n is a valid day for the given month
-        if month == 2 and n > 28 or n <= 12:
->>>>>>> 7f81035502ec5e66f7750ca8065f364a2c4f3bc2
             return False
         elif month in {4, 6, 9, 11}:
             if n > 30:
@@ -89,8 +84,3 @@ def formatAnswer(month, day, year):
         year = str(year)
     newList = [month, day, year]
     return newList
-<<<<<<< HEAD
-
-answer (2,28,02)
-=======
->>>>>>> 7f81035502ec5e66f7750ca8065f364a2c4f3bc2
