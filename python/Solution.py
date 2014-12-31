@@ -33,7 +33,7 @@ def isDay(month, n):
         if n == month:
             return True
 
-		#check if n is a valid day for the given month
+	#check if n is a valid day for the given month
         if month == 2 and n > 28 or n <= 12:
             return False
         elif month in {4, 6, 9, 11}:
@@ -90,5 +90,3 @@ def formatAnswer(month, day, year):
         year = str(year)
     newList = [month, day, year]
     return newList
-
-answer(001,25,040)
