@@ -2,12 +2,8 @@ def answer(x, y, z):
     # your code here
     intList = [x, y, z]
     intList.sort()
-    month = 0
-    day = 0 
-    year = 0
-    n = x
 
-    if (isMonth(intList[0]) and isDay(intList[0], intList[1]) and isValidYear(intList[0], intList[1], intList[2])):
+    if (isValidMonth(intList[0]) and isValidDay(intList[0], intList[1]) and isValidYear(intList[0], intList[1], intList[2])):
         month = intList[0]
         day = intList[1]
         year = intList[2]
@@ -21,29 +17,27 @@ def answer(x, y, z):
     print text
     return text
 
-def isMonth(n):
+def isValidMonth(n):
     if n <= 12:
         return True
     else:
         return False
 
-def isDay(month, n):
+def isValidDay(month, n):
     if n <= 31:
 
         if n == month:
             return True
+        
+        if n <= 12:
+            return False
 
 		#check if n is a valid day for the given month
-        if month == 2 and n > 28 or n <= 12:
+        if month == 2 and n > 28:
             return False
         elif month in {4, 6, 9, 11}:
-            if n > 30 or n <= 12:
+            if n > 30:
                 return False
-        elif month in {1, 3, 5, 7, 8, 10, 12}:
-            if n <= 12:
-                return False
-            else:
-                return True
         else:
             return True
     else:
@@ -53,7 +47,7 @@ def isValidYear(month, day, n):
 
     if n <= 99:
         
-        if n == day:
+        if n == day or n == month:
             return True 
 
         #check if n is a valid year for the given month
@@ -91,4 +85,4 @@ def formatAnswer(month, day, year):
     newList = [month, day, year]
     return newList
 
-answer(001,25,040)
+answer (2,28,02)
