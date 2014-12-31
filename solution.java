@@ -71,12 +71,12 @@ public class solution {
 				//check if result is divisible by 3
 				if (N % 3 == 0){
 					numberOf5s = numberOf5s + 3*N/3;
-                    N = N - 3*N/3;
+                    			N = N - 3*N/3;
 				}
 				//check if result is divisible by 5
 				else if (N % 5 == 0){
-			        numberOf3s = numberOf3s + 5*N/5;
-                    N = N - 5*N/5;
+			        	numberOf3s = numberOf3s + 5*N/5;
+                    			N = N - 5*N/5;
 				} else {
 					String str = subtractFromN(N);
 					return str;
