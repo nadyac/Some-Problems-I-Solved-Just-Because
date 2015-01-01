@@ -1,5 +1,14 @@
 def answer(x, y, z):
     # your code here
+
+    intList2 = [str(x), str(y), str(z)]
+    print intList2[2] + "*******"
+    intList3 = [m.lstrip('0') for m in intList2]
+    print intList3
+
+    intList0 = [int(m) for m in intList3]
+    print intList0
+
     intList = [x, y, z]
     intList.sort()
 
@@ -23,16 +32,16 @@ def isValidMonth(n):
     else:
         return False
 
-def isValidDay(month, n):
+def isValidDay(month, n, year):
     if n <= 31:
 
-        if n == month:
+        if n == month or n == year:
             return True
         
         if n <= 12:
             return False
 
-        #check if n is a valid day for the given month
+		#check if n is a valid day for the given month
         if month == 2 and n > 28:
             return False
         elif month in {4, 6, 9, 11}:
@@ -84,3 +93,4 @@ def formatAnswer(month, day, year):
         year = str(year)
     newList = [month, day, year]
     return newList
+answer(001,27,00045)
