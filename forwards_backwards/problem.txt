@@ -1,0 +1,56 @@
+The sign outside reads: Name no one man.
+
+"Escape. We must escape." Staring at the locked door of his cage, Beta Rabbit, spy and brilliant mathematician, has a revelation. "Of course! Name no one man - it's a palindrome! Palindromes are the key to opening this lock!" 
+
+To help Beta Rabbit crack the lock, write a function answer(n) which returns the smallest positive integer base b, at least 2, in which the integer n is a palindrome. The input n will satisfy "0 <= n <= 1000."
+
+Languages
+=========
+
+To provide a Python solution, edit solution.py
+To provide a Java solution, edit solution.java
+
+Test cases
+==========
+
+Inputs:
+    (int) n = 0
+Output:
+    (int) 2
+
+Inputs:
+    (int) n = 42
+Output:
+    (int) 4
+
+************ Approaches ************
+Only want to test until base 9 because after the number we're considering is base 10, and after base10, letters get introduced at the end of the number
+so it's (from what I can tell) impossible to get a palindrome after base10. 
+
+One brute force approach would be to take n, convert it to its base equivalent in bases 2, 3, 4,..., 9 and check each time if it's a palindrome.
+
+algorithm to check if it's palindrome:
+put the string into a stack and a queue. Pop elem from stack, dq elem from queue and compare them. Only need to do for half the digits. 
+
+Ex: radix(10) 1000 is 1331
+enqueue each digit in 1331 into the queue so it's 1, 3, 3, 1
+push each digit in 1331 onto the stack so it's 1, 3, 3, 1
+
+let's say the radix(10) 73 which is 1001001
+enqueue each digit into the queue so it's 1, 0, 0, 1, 0, 0, 1
+push each digit onto the stack so it's 1, 0, 0, 1, 0, 0, 1
+	
+	- Take the converted base i value
+	- Create a Stack and a Queue LinkedLists (this way we don't have to worry about getting lengths and calculating mid values, etc.)
+	- Loop through the character digits and add them to the Queue and Stack one at a time.
+	- OPTIONAL: We could optimize and add one half of the digits to the Stack and the other half to the Queue and if its Palindrome, they should be the same.
+	- Loop through the number of digits and pop and dequeue from the Stack and Queue and compare them. 
+
+#2) Take the radix(10) number and loop through its base 2 - 9 values. Each time, put those digits into int arrays. 
+	- Take the converted base i value and get its length
+	- Create array of size length to hold the digits of the converted value
+	- Loop through the character digits and add them to the array one at a time.
+	- Get the index number of the middle of the array
+	- Have a single for loop check the elements on each side of the middle element, starting at the ends.
+	- Stop when we have reached the middle element. If we have not found a discrepancy, then we're good.
+	- Turn that palindrome value back into int and return it. 
