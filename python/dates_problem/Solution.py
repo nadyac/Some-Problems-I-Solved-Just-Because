@@ -1,14 +1,5 @@
 def answer(x, y, z):
     # your code here
-
-    intList2 = [str(x), str(y), str(z)]
-    print intList2[2] + "*******"
-    intList3 = [m.lstrip('0') for m in intList2]
-    print intList3
-
-    intList0 = [int(m) for m in intList3]
-    print intList0
-
     intList = [x, y, z]
     intList.sort()
 
@@ -93,4 +84,3 @@ def formatAnswer(month, day, year):
         year = str(year)
     newList = [month, day, year]
     return newList
-answer(001,27,00045)
