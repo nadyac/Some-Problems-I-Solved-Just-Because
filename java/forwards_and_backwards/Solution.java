@@ -39,18 +39,16 @@ public class Solution{
 		String digit = "";
 
 		for (int i = 0; i <= length - 1; i++){
-			//--------------------------------------
+			
 			//add each digit to the stack and queue
-			//--------------------------------------
 			digit = String.valueOf(s.charAt(i));
 			q.add(digit);
 			st.push(digit);
 		}
 
 		while(!q.isEmpty() && !st.empty()){
-			//--------------------------------------------
+			
 			//compare elems in the queue and stack
-			//--------------------------------------------
 			if (q.remove().equals(st.pop()) == false){
 				return false;
 			}
