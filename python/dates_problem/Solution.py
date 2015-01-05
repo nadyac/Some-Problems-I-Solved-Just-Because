@@ -17,12 +17,15 @@ def answer(x, y, z):
     print text
     return text
 
+# Determine if the given int n is a valid month
 def isValidMonth(n):
     if n <= 12:
         return True
     else:
         return False
 
+# Determine if the given int n is a valid day
+# based on the month and year
 def isValidDay(month, n, year):
     if n <= 31:
 
@@ -32,7 +35,7 @@ def isValidDay(month, n, year):
         if n <= 12:
             return False
 
-		#check if n is a valid day for the given month
+	#check the valid day values for the given month
         if month == 2 and n > 28:
             return False
         elif month in {4, 6, 9, 11}:
@@ -43,6 +46,8 @@ def isValidDay(month, n, year):
     else:
         return False
 
+# Determine if the given int n is a valid year based
+# on the given month and day. 
 def isValidYear(month, day, n):
 
     if n <= 99:
